@@ -101,8 +101,21 @@ Point a4;
 int l1;
 int l2;
 public:
- Rectangle()
- {a1.Set_X(0);
+ Rectangle();
+ Rectangle(Point a,Point b);
+ void Print();
+ void side1();
+ void side2();
+ void area(); 
+};
+// ********************************************************************
+//  Methods for class Rectangle
+// ********************************************************************
+
+//Lab 7 exercise 4.2, 4.3. Add class Rectangle methods HERE: 
+
+Rectangle::Rectangle()
+  {a1.Set_X(0);
   a1.Set_Y(0);
   a2.Set_X(0);
   a2.Set_Y(1);
@@ -110,7 +123,7 @@ public:
   a3.Set_Y(0);
   a4.Set_X(1);
   a4.Set_Y(1);}
- Rectangle(Point a,Point b)
+ Rectangle::Rectangle(Point a,Point b)
  {a1.Set_X(a.X);
   a1.Set_Y(a.Y);
   a2.Set_X(a.X);
@@ -119,7 +132,7 @@ public:
   a3.Set_Y(b.Y);
   a4.Set_X(b.X);
   a4.Set_Y(a.Y);}
-  void Print()
+ void Rectangle::Print()
   {a1.Print();
   cout<<"\n";
   a2.Print();
@@ -128,21 +141,13 @@ public:
   cout<<"\n";
   a4.Print();
   cout<<"\n";}
-  void side1()
+void Rectangle::side1()
   {l1=a2.Y-a1.Y;}
-  void side2()
+  void Rectangle::side2()
   {l2=a3.X-a2.X;}
-  void area()
+  void Rectangle::area()
   {cout<<"The area of the rectangle is "<<l1*l2;}
   
-};
-// ********************************************************************
-//  Methods for class Rectangle
-// ********************************************************************
-
-//Lab 7 exercise 4.2, 4.3. Add class Rectangle methods HERE: 
-
-
 
 // ********************************************************************
 //  main() function for testing classes Point and Rectangle
